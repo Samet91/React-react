@@ -3,7 +3,7 @@ import Square from './Square';
 
 function Board(): JSX.Element {
   function renderSquare(i: number) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   const status = 'Next player: X';
@@ -12,7 +12,7 @@ function Board(): JSX.Element {
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
-        {renderSquare(0)}
+        {renderSquare(0)}  
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
