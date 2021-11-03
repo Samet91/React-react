@@ -4,8 +4,8 @@ import Square from './Square';
 function Board(): JSX.Element {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
-  console.log(squares)
-  function handleClick(i: number) {                          
+  console.log(squares);
+  function handleClick(i: number) {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -16,12 +16,7 @@ function Board(): JSX.Element {
   }
 
   function renderSquare(i: number) {
-    return ( 
-      <Square 
-        value={squares[i]}
-        onClick={() => handleClick(i)}
-    />
-    );
+    return <Square value={squares[i]} onClick={() => handleClick(i)} />;
   }
 
   const winner = calculateWinner(squares);
@@ -32,12 +27,11 @@ function Board(): JSX.Element {
     status = 'Next player: ' + (xIsNext ? 'Felix' : 'Samet');
   }
 
-
   return (
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
-        {renderSquare(0)}  
+        {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
@@ -74,5 +68,5 @@ function calculateWinner(squares: unknown[]) {
   }
   return null;
 }
-   
+
 export default Board;
