@@ -55,7 +55,7 @@ function Board(): JSX.Element {
   );
 }
 
-function calculateWinner(squares: any[]) {
+function calculateWinner(squares: unknown[]) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
